@@ -24,7 +24,7 @@ public class EmailService {
     public void sendEmail(NotificationRequestEvent event) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom(fromEmail);
+            message.setFrom(fromName + " <" + fromEmail + ">");
             message.setTo(event.getRecipientEmail());
             message.setSubject(event.getSubject());
             message.setText(event.getMessage());

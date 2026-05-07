@@ -50,7 +50,7 @@ class EmailServiceTest {
         verify(mailSender).send(captor.capture());
 
         SimpleMailMessage sent = captor.getValue();
-        assertThat(sent.getFrom()).isEqualTo("noreply@fleetops.com");
+        assertThat(sent.getFrom()).isEqualTo("FleetOps System <noreply@fleetops.com>");
         assertThat(sent.getTo()).containsExactly("driver@fleetops.com");
         assertThat(sent.getSubject()).isEqualTo("Geofence Alert");
         assertThat(sent.getText()).isEqualTo("Vehicle left the assigned zone.");
@@ -83,6 +83,6 @@ class EmailServiceTest {
 
         ArgumentCaptor<SimpleMailMessage> captor = ArgumentCaptor.forClass(SimpleMailMessage.class);
         verify(mailSender).send(captor.capture());
-        assertThat(captor.getValue().getFrom()).isEqualTo("noreply@fleetops.com");
+        assertThat(captor.getValue().getFrom()).isEqualTo("FleetOps System <noreply@fleetops.com>");
     }
 }

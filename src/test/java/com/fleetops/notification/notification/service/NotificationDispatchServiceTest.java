@@ -45,6 +45,7 @@ class NotificationDispatchServiceTest {
         dispatchService.dispatch(event);
 
         // Only email is wired — no SMS, no push
+        verify(emailService).sendEmail(event);
         verifyNoMoreInteractions(emailService);
     }
 }
