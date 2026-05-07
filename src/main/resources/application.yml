@@ -18,10 +18,11 @@ spring:
         spring.json.trusted.packages: "com.fleetops.notification.kafka.event"
 
   # ─── Mailtrap SMTP config ───
+
   mail:
-    host: ${MAIL_HOST:sandbox.smtp.mailtrap.io}
-    port: ${MAIL_PORT:2525}
-    username: ${MAIL_USERNAME:your_mailtrap_username}
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username:  ${MAIL_USERNAME:your_mailtrap_username}
     password: ${MAIL_PASSWORD:your_mailtrap_password}
     properties:
       mail:
@@ -31,7 +32,7 @@ spring:
             enable: true
 
 notification:
-  from-email: ${MAIL_FROM:noreply@fleetops.com}
+  from-email: ${MAIL_FROM:agholordavid19@gmail.com}
   from-name: "FleetOps System"
 
 kafka:
